@@ -5,10 +5,11 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint',
-    ecmaFeatures: {
-      legacyDecorators: true
-    }
+    // parser: 'babel-eslint',
+    // ecmaFeatures: {
+    //   legacyDecorators: true
+    // }
+    parser: '@typescript-eslint/parser'
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
