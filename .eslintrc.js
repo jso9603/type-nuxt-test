@@ -9,6 +9,8 @@ module.exports = {
     // ecmaFeatures: {
     //   legacyDecorators: true
     // }
+    
+    // https://github.com/vuejs/eslint-plugin-vue/issues/811
     parser: '@typescript-eslint/parser'
   },
   extends: [
