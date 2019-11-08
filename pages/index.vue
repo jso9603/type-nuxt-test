@@ -22,7 +22,7 @@
           h2 아이로보 상품
           p 증권사별 투자 전략 맞춤 상품
           div.product-list
-          Product(buttonTitle="자세히 보기")
+          Product(buttonTitle="자세히 보기" @emitProduct="productDetail")
 
         section.securities-firm
           h2 아이로보 일임 증권사
@@ -114,6 +114,10 @@ export default class Index extends Vue {
       description: '계약금 입금 확인 후\n계좌 운용 시작'
     }
   ]
+
+  productDetail(data: string) {
+    console.log('data:', data)
+  }
 }
 </script>
 

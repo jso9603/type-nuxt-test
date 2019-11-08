@@ -5,7 +5,7 @@
         h3 {{product.title}}
         p.subhead {{product.subTitle}}
         p {{product.description}}
-        button.btn-product-detail {{buttonTitle}}
+        button.btn-product-detail(@click="onEmitEvent") {{buttonTitle}}
 </template>
 
 <style lang="scss" scoped>
@@ -63,6 +63,7 @@ interface Product {
 @Component
 export default class ProductComponent extends Vue {
   @Prop() buttonTitle!: String
+  private parentData: string = 'parent'
 
   readonly products: Product[] = [
     {
@@ -78,5 +79,9 @@ export default class ProductComponent extends Vue {
       description: `국내 상장된 ETP를 활용하여 위험 대비 수익을\n극대화하는 자산배분 모델 및 위험자산의 추세적 하락시\n안전채권으로 전환하는 국면모델을 통해 손실 위험을\n최소화하는 전력을 동시에 추구`
     }
   ]
+
+  onEmitEvent() {
+    this.$emit('emitProduct', this.parentData)
+  }
 }
 </script>
