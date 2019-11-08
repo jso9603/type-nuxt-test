@@ -22,7 +22,7 @@
           h2 아이로보 상품
           p 증권사별 투자 전략 맞춤 상품
           div.product-list
-          Product
+          Product(buttonTitle="자세히 보기")
 
         section.securities-firm
           h2 아이로보 일임 증권사
@@ -72,47 +72,49 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import AppLogo from '~/components/AppLogo.vue'
 import Product from '~/components/Product.vue'
+
+interface Step {
+  id: Number
+  title: string
+  imgSrc: string
+  description: string
+}
 
 @Component({
   components: {
-    AppLogo,
     Product
-  },
-  data() {
-    return {
-      steps: [
-        {
-          id: 1,
-          title: '상담문의',
-          imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg1.png',
-          description: '아이로보 상품 설명\n및 가입 안내'
-        },
-        {
-          id: 2,
-          title: '투자성향확인',
-          imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg2.png',
-          description: '투자권유 및\n투자성향확인'
-        },
-        {
-          id: 3,
-          title: '계약체결',
-          imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg3.png',
-          description: '아이로보 계약 및 계좌개설\n계좌개설'
-        },
-        {
-          id: 4,
-          title: '계좌운용',
-          imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg4.png',
-          description: '계약금 입금 확인 후\n계좌 운용 시작'
-        }
-      ]
-    }
   }
 })
 
-export default class Index extends Vue { }
+export default class Index extends Vue {
+  readonly steps: Step[] = [
+    {
+      id: 1,
+      title: '상담문의',
+      imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg1.png',
+      description: '아이로보 상품 설명\n및 가입 안내'
+    },
+    {
+      id: 2,
+      title: '투자성향확인',
+      imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg2.png',
+      description: '투자권유 및\n투자성향확인'
+    },
+    {
+      id: 3,
+      title: '계약체결',
+      imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg3.png',
+      description: '아이로보 계약 및 계좌개설\n계좌개설'
+    },
+    {
+      id: 4,
+      title: '계좌운용',
+      imgSrc: 'https://cdn.irobo.co.kr/images/sub/joinImg4.png',
+      description: '계약금 입금 확인 후\n계좌 운용 시작'
+    }
+  ]
+}
 </script>
 
 <style lang="scss" scoped>
